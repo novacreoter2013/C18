@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Darshil.dev | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at top,#0b0f1a,#05070f);
+  color:#e5e7eb;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+}
+.logo{font-weight:700;color:#a855f7}
+nav ul{display:flex;gap:25px;list-style:none;font-size:14px;color:#cbd5f5}
+nav ul li a{color:inherit}
+nav button{
+  background:linear-gradient(135deg,#a855f7,#6366f1);
+  border:none;
+  padding:8px 16px;
+  color:white;
+  border-radius:20px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:80px 60px;
+  align-items:center;
+}
+.badge{
+  background:rgba(168,85,247,.15);
+  color:#c084fc;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+}
+.hero h1{font-size:48px;margin-top:15px}
+.gradient{
+  background:linear-gradient(135deg,#a855f7,#22d3ee);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p{margin-top:20px;color:#9ca3af}
+.buttons{margin-top:30px;display:flex;gap:15px}
+.btn-primary{
+  background:linear-gradient(135deg,#a855f7,#6366f1);
+  padding:12px 22px;
+  border-radius:25px;
+  display:inline-block;
+  color:white;
+}
+.btn-secondary{
+  border:1px solid #374151;
+  padding:12px 22px;
+  border-radius:25px;
+  display:inline-block;
+  color:inherit;
+}
+.hero img{
+  max-width:350px;
+  width:100%;
+  border-radius:50%;
+  margin:auto;
+  box-shadow:0 0 40px rgba(168,85,247,.4);
+}
+
+/* SECTION */
+section{padding:90px 60px}
+section h2{font-size:36px}
+.subtitle{color:#9ca3af;margin:15px 0 50px}
+
+/* TECH STACK */
+.stack-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.stack-card{
+  background:#0b1020;
+  border:1px solid #1f2937;
+  border-radius:20px;
+  padding:30px;
+  transition:.3s;
+}
+.stack-card:hover{
+  transform:translateY(-8px);
+  border-color:#7c3aed;
+}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{
+  background:#0b1220;
+  border:1px solid #1f2937;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.project-card{
+  background:#0b1020;
+  border:1px solid #1f2937;
+  border-radius:20px;
+  padding:25px;
+  transition:.3s;
+}
+.project-card:hover{
+  transform:translateY(-8px);
+  border-color:#a855f7;
+}
+
+/* CONTACT */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  background:#0b1020;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  color:white;
+}
+textarea{resize:none;height:120px}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#9ca3af;
+  font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero,.contact{grid-template-columns:1fr;text-align:center}
+}
+
+/* Featured projects styles (kept from original second block) */
+:root{
+  --bg:#05070f;
+  --card:#0b1020;
+  --border:#1f2937;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --purple:#a855f7;
+}
+
+/* ...redundant resets removed/merged... */
+
+.featured{
+  padding:120px 60px;
+}
+
+.featured-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:70px;
+}
+
+.featured-header h2{
+  font-size:42px;
+  font-weight:700;
+}
+
+.featured-header p{
+  margin-top:8px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+.view-all{
+  padding:10px 20px;
+  border-radius:999px;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text);
+  font-size:13px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.view-all:hover{
+  border-color:var(--purple);
+  color:var(--purple);
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+}
+
+.project{
+  position:relative;
+  background:linear-gradient(180deg,#0c1326,#060b1a);
+  border:1px solid var(--border);
+  border-radius:26px;
+  overflow:hidden;
+  transition:.4s ease;
+}
+
+.project::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:26px;
+  background:linear-gradient(120deg,
+    transparent,
+    rgba(168,85,247,.7),
+    transparent
+  );
+  opacity:0;
+  transition:.4s;
+}
+
+.project:hover::before{
+  opacity:1;
+}
+
+.project:hover{
+  transform:translateY(-12px);
+  box-shadow:0 25px 60px rgba(168,85,247,.25);
+}
+
+.project-img{
+  height:180px;
+  background:linear-gradient(135deg,#6366f1,#22d3ee);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:44px;
+}
+
+.project-body{
+  padding:26px;
+}
+
+.project-body h3{
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.project-body p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tags span{
+  background:#0b1220;
+  border:1px solid var(--border);
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:12px;
+  color:#cbd5f5;
+}
+
+@media(max-width:600px){
+  .featured{
+    padding:90px 20px;
+  }
+  .featured-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+  <div class="logo">&lt;/&gt; Darshil.dev</div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myPortfolioNav">
+      <span class="navbar-toggler-icon">  </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="myPortfolioNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="firbase.htm" target="_blank">
+            <button style="background:linear-gradient(135deg,#a855f7,#6366f1); border:none; padding:8px 16px; color:white; border-radius:20px; font-size:12px;">
+              AUTHORIZED PERSON ONLY
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="hero" id="about">
+  <div>
+    <span class="badge">✨ Class 7 Student & Coder</span>
+    <h1>Hi, I’m <span class="gradient">Darshil</span><br>I build cool stuff.</h1>
+    <p>I'm a passionate junior developer with 8+ months of experience. I love turning ideas into reality using code, design, and creativity.
+
+</p>
+    <div class="buttons">
+      <a class="btn-primary" href="#projects">View Work</a>
+      <a class="btn-secondary" href="#contact">Contact Me</a>
+    </div>
+  </div>
+  <img src="image copy.png" alt="Profile">
+</div>
+  
+
+    <p> <span style="color: #00FFFF;">>_</span> Currently learning: Advanced CSS</p>
+ 
+
+<section id="skills">
+  <h2>My Tech Stack</h2>
+  <p class="subtitle">
+    I use a variety of tools to bring my ideas to life. From block-based coding
+    to real text-based programming.
+  </p>
+
+  <div class="stack-grid">
+
+    <div class="stack-card">
+      <div class="icon blue">🌐</div>
+      <h3>Coding Platforms</h3>
+      <div class="tags">
+        <span>Replit</span>
+        <span>Code.org</span>
+        <span><a href="https://scratch.mit.edu/users/com_shin/projects/">Scratch</a></span>
+        <span>VS Code</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <div class="icon purple">📱</div>
+      <h3>App Development</h3>
+      <div class="tags">
+        <span><a href="https://gallery.appinventor.mit.edu/byowner/5a70488f-b54d-4676-a0d0-f72a9f17e963">Mit App Inventor</a></span>
+        <span>Thunkable</span>
+        <span>Mobile UI</span>
+        <span>Firebase</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <div class="icon green">💻</div>
+      <h3>Web Tech</h3>
+      <div class="tags">
+        <span><a href="https://github.com/novacreoter2013/C2.git">HTML/CSS</a></span>
+        <span>JavaScript</span>
+        <span>Responsive Design</span>
+        <span>SEO</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <div class="icon pink">🤖</div>
+      <h3>AI Tools</h3>
+      <div class="tags">
+        <span>Teachable Machine</span>
+        <span>AI Models</span>
+        <span>ChatGPT</span>
+        <span>Perplexity</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="featured" id="projects">
+
+  <div class="featured-header">
+    <div>
+      <h2>Featured Projects</h2>
+      <p>Some of the cool things I’ve built recently.</p>
+    </div>
+   <a class="btn-secondary" href="vap.html">View All Projects</a>
+  </div>
+
+  <div class="project-grid">
+
+    <div class="project">
+      <div class="project-img">🌐</div>
+      <div class="project-body">
+        <h3>School Website</h3>
+        <p>A modern responsive school website built using HTML and CSS.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project"> 
+      <div class="project-img">🎮</div>
+      <div class="project-body">
+        <h3>Scratch Game</h3>
+        <p>An interactive game with animations and logic built in Scratch.</p>
+        <div class="tags">
+          <span>Scratch</span>
+          <span>Teachable Machine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-img">📱</div>
+      <div class="project-body">
+        <h3>Mobile App</h3>
+        <p>A simple mobile app prototype made using MIT App Inventor and other tools.</p>
+        <div class="tags">
+          <span>MIT App Inventor</span>
+          <span>Thunkable</span>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
+  <section id="github">
+  <h2>My GitHub & Scratch Profile</h2>
+  <p class="subtitle">“Explore my GitHub & Scratch profile to view my source code, ongoing projects, and experiments where I apply my skills and continuously improve as a developer.”</p>
+
+  <a 
+    href="https://github.com/novacreoter2013" 
+    target="_blank" 
+    class="btn-primary">
+    ⭐ Follow me on GitHub
+  </a>
+
+  <a 
+    href="https://scratch.mit.edu/users/com_shin/" 
+    target="_blank" 
+    class="btn-primary">
+    ⭐ Follow me on Scratch
+  </a>
+</section>
+
+<section id="contact">
+  <h2>Let’s Connect</h2>
+  <p class="subtitle">Have a project in mind or just want to say hi? I'm always learning and looking for new opportunities to create.</p>
+
+  <div class="contact">
+    <div>
+      <p>Email: singhdarshil2013@gmail.com</p>
+      <p>Socials (GitHub): novacreoter2013</p> 
+    </div>
+    <div>
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea id="message" placeholder="“Have a project in your mind? Enter your message below.”" required></textarea>
+  <button class="btn-primary" onclick="sendMessage()">Send Message</button>
+</div>
+  </div>
+</section>
+
+<script>
+  function sendMessage() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill all fields");
+      return;
+    }
+
+    const data = {
+      name: name,
+      email: email,
+      message: message,
+      time: new Date().toLocaleString()
+    };
+
+    fetch("https://darshil-portfolio-db1a7-default-rtdb.firebaseio.com/messages.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Message sent successfully 🚀");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+      } else {
+        alert("Error sending message ❌");
+      }
+    })
+    .catch(error => {
+      alert("Network error ❌");
+      console.error(error);
+    });
+  }
+</script>
+
+
+<footer>
+  <p>© 2026 Darshil Singh — Built with ❤️</p>
+</footer>
+</body>
+</html>
