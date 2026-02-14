@@ -303,6 +303,33 @@ footer{
     gap:16px;
   }
 }
+
+
+/* Carousel Custom Styles */
+.carousel {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 50px;
+}
+.carousel-item {
+  height: 350px;
+  background: #0b1020;
+}
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 40px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  filter: drop-shadow(0 0 5px #a855f7);
+}
+
 </style>
 </head>
 
@@ -360,8 +387,90 @@ footer{
 </div>
   
 
-    <p> <span style="color: #00FFFF;">>_</span> Currently learning: Advanced CSS</p>
+    <p> <span style="color: #00FFFF;">>_</span> Currently learning: Advanced JavaScript</p>
  
+
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Project Spotlight</h2>
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-content">
+            <h1 class="gradient">Codingal Learner</h1>
+            <p><b>Mastering Web Development, JavaScript, and Firebase through Codingal.</b></p>
+            <span class="badge">Current Track</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <h1 class="gradient">Portfolio Dashboard</h1>
+            <p><b>My personal portfolio website showcasing projects and skills.</b></p>
+            <span class="badge">Featured Website</span>
+          </div>
+        </div>
+
+ <div class="carousel-item">
+          <div class="carousel-content">
+            <h1 class="gradient">School Project</h1>
+            <p><b>Responsive educational website design</b></p>
+            <span class="badge">Web Design</span>
+          </div>
+        </div>
+
+
+        
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+</div>
+
+
+
+<section id="achievements">
+  <h2>Certificates & Achievements</h2>
+  <p class="subtitle">Official recognition of my learning journey and coding milestones.</p>
+  
+  <div class="stack-grid">
+    <div class="stack-card text-center">
+      <div style="font-size: 40px; margin-bottom: 15px;">📜</div>
+      <h3 style="font-size: 18px;">Web Development</h3>
+      <p style="font-size: 13px; color: #9ca3af;">Codingal Course</p>
+      <span class="badge mt-2">Completed</span>
+    </div>
+
+   <div class="stack-card text-center" style="border-color: #f59e0b;">
+  <div style="font-size: 40px; margin-bottom: 15px;">🏆</div>
+  <h3 style="font-size: 18px;">Codingal Credits</h3>
+  <p style="font-size: 24px; font-weight: 700; color: #f59e0b; margin: 5px 0;">24,740</p>
+  <p style="font-size: 13px; color: #9ca3af;">Total Experience Points</p>
+  <span class="badge mt-2" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">Diamond Level</span>
+</div>
+
+    <div class="stack-card text-center">
+      <div style="font-size: 40px; margin-bottom: 15px;">🎓</div>
+      <h3 style="font-size: 18px;">JavaScript Master</h3>
+      <p style="font-size: 13px; color: #9ca3af;">Codingal Series</p>
+      <span class="badge mt-2">In Progress</span>
+    </div>
+  </div>
+</section>
+
+
+
 
 <section id="skills">
   <h2>My Tech Stack</h2>
